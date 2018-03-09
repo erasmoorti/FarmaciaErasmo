@@ -1,0 +1,63 @@
+﻿<Window x:Class="Farmacia.VentanaProductos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Farmacia"
+        mc:Ignorable="d"
+        Title="VentanaProductos" Height="300" Width="370">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Vertical" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <Label Grid.Column="0" Grid.Row="0" >Nombre Del Producto</Label>
+                <TextBox x:Name="txbNombreDelProducto" Width="100" Grid.Column="1" Grid.Row="0" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Grid.Column="0" Grid.Row="1" >Categoria</Label>
+                <TextBox x:Name="txbCategoria" Width="100" Grid.Column="1" Grid.Row="1" ></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Grid.Column="0" Grid.Row="2" >Descripcion</Label>
+                <TextBox x:Name="txbDescripcion" Width="100"  Grid.Column="1" Grid.Row="2" ></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Grid.Column="0" Grid.Row="3" >Precio De Compra</Label>
+                <TextBox x:Name="txbPrecioDeCompra" Width="100" Grid.Column="1" Grid.Row="3" ></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Grid.Column="0" Grid.Row="4" >Precio De Venta</Label>
+                <TextBox x:Name="txbPrecioDeVenta" Width="100" Grid.Column="1" Grid.Row="4" ></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Grid.Column="0" Grid.Row="5" >Precentacion</Label>
+                <TextBox x:Name="txbPrecentacion" Width="100" Grid.Column="1" Grid.Row="5" ></TextBox>
+            </StackPanel>
+
+        </StackPanel>
+
+        <WrapPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Button Width="70" x:Name="btnNuevo" Click="btnNuevo_Click">Nuevo</Button>
+            <Button Width="70" x:Name="btnGuardar" Click="btnGuardar_Click">Guardar</Button>
+            <Button Width="70" x:Name="btnEditar" Click="btnEditar_Click">Editar</Button>
+            <Button Width="70" x:Name="btnCancelar" Click="btnCancelar_Click">Cancelar</Button>
+            <Button Width="70" x:Name="btnEliminar" Click="btnEliminar_Click">Eliminar</Button>
+        </WrapPanel>
+
+        <DataGrid x:Name="dtgMateria" Grid.Row="3" Grid.ColumnSpan="2" IsReadOnly="True"></DataGrid>
+    </Grid>
+</Window>
